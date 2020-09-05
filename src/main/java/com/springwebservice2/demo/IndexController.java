@@ -1,8 +1,8 @@
 package com.springwebservice2.demo;
 
 import com.springwebservice2.demo.Service.posts.PostsService;
-import com.springwebservice2.demo.config.auth.LoginUser;
-import com.springwebservice2.demo.config.auth.dto.SessionUser;
+import com.springwebservice2.demo.config.LoginUser;
+import com.springwebservice2.demo.config.dto.SessionUser;
 import com.springwebservice2.demo.web.dto.PostListResponseDto;
 import com.springwebservice2.demo.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;

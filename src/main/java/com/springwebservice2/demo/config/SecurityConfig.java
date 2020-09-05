@@ -1,4 +1,4 @@
-package com.springwebservice2.demo.config.auth;
+package com.springwebservice2.demo.config;
 
 import com.springwebservice2.demo.web.domain.user.Role;
 import lombok.RequiredArgsConstructor;

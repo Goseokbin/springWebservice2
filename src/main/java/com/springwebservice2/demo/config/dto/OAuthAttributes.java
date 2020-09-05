@@ -1,4 +1,4 @@
-package com.springwebservice2.demo.config.auth.dto;
+package com.springwebservice2.demo.config.dto;
 
 import com.springwebservice2.demo.web.domain.user.Role;
 import com.springwebservice2.demo.web.domain.user.User;

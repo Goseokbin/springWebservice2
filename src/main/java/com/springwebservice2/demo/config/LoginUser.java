@@ -1,4 +1,4 @@
-package com.springwebservice2.demo.config.auth;
+package com.springwebservice2.demo.config;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
