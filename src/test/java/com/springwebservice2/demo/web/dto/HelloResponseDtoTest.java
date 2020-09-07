@@ -1,6 +1,5 @@
-package com.springwebservice2.demo.dto;
+package com.springwebservice2.demo.web.dto;
 
-import com.springwebservice2.demo.web.dto.HelloResponseDto;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -1,4 +1,4 @@
-package com.springwebservice2.demo;
+package com.springwebservice2.demo.web;
 
 import com.springwebservice2.demo.config.auth.SecurityConfig;
 import com.springwebservice2.demo.web.HelloController;

@@ -1,4 +1,4 @@
-package com.springwebservice2.demo;
+package com.springwebservice2.demo.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springwebservice2.demo.domain.posts.Posts;

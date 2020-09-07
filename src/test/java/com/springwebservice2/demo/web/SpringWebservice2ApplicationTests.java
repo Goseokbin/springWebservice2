@@ -1,4 +1,4 @@
-package com.springwebservice2.demo;
+package com.springwebservice2.demo.web;
 
 
 import org.springframework.boot.test.context.SpringBootTest;

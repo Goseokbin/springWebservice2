@@ -1,4 +1,4 @@
-package com.springwebservice2.demo.dto;
+package com.springwebservice2.demo.web.dto;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

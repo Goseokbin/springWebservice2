@@ -1,4 +1,4 @@
-package com.springwebservice2.demo.posts;
+package com.springwebservice2.demo.domain.posts;
 
 import com.springwebservice2.demo.domain.posts.Posts;
 import com.springwebservice2.demo.domain.posts.PostsRepository;
