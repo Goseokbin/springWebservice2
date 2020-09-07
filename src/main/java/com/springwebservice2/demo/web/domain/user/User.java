@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -28,8 +28,7 @@ public class User {
     private Role role;
 
     @Builder
-    public User(String id, String name, String email, String picture, Role role) {
-    this.id = id;
+    public User(String name, String email, String picture, Role role) {
     this.name =name;
     this.email=email;
     this.picture = picture;
