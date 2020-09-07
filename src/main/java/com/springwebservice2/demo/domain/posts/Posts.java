@@ -1,5 +1,6 @@
-package com.springwebservice2.demo.web.domain.posts;
+package com.springwebservice2.demo.domain.posts;
 
+import com.springwebservice2.demo.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts extends BaseTimeEntity{
+public class Posts extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

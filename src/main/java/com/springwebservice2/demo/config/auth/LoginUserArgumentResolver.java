@@ -1,6 +1,6 @@
-package com.springwebservice2.demo.config;
+package com.springwebservice2.demo.config.auth;
 
-import com.springwebservice2.demo.config.dto.SessionUser;
+import com.springwebservice2.demo.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;

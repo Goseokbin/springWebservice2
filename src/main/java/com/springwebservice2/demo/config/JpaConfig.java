@@ -1,4 +1,4 @@
-package com.springwebservice2.demo.config.auth;
+package com.springwebservice2.demo.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

@@ -1,6 +1,6 @@
 package com.springwebservice2.demo;
 
-import com.springwebservice2.demo.config.SecurityConfig;
+import com.springwebservice2.demo.config.auth.SecurityConfig;
 import com.springwebservice2.demo.web.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,7 @@
-package com.springwebservice2.demo.config.dto;
+package com.springwebservice2.demo.config.auth.dto;
 
-import com.springwebservice2.demo.web.domain.user.Role;
-import com.springwebservice2.demo.web.domain.user.User;
+import com.springwebservice2.demo.domain.user.Role;
+import com.springwebservice2.demo.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 

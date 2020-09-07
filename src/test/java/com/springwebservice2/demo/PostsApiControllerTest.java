@@ -1,8 +1,8 @@
 package com.springwebservice2.demo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springwebservice2.demo.web.domain.posts.Posts;
-import com.springwebservice2.demo.web.domain.posts.PostsRepository;
+import com.springwebservice2.demo.domain.posts.Posts;
+import com.springwebservice2.demo.domain.posts.PostsRepository;
 import com.springwebservice2.demo.web.dto.PostsSaveRequestDto;
 import com.springwebservice2.demo.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
@@ -17,7 +17,6 @@ import org.springframework.http.*;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 

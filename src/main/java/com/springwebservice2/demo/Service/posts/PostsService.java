@@ -1,7 +1,7 @@
 package com.springwebservice2.demo.Service.posts;
 
-import com.springwebservice2.demo.web.domain.posts.Posts;
-import com.springwebservice2.demo.web.domain.posts.PostsRepository;
+import com.springwebservice2.demo.domain.posts.Posts;
+import com.springwebservice2.demo.domain.posts.PostsRepository;
 import com.springwebservice2.demo.web.dto.PostListResponseDto;
 import com.springwebservice2.demo.web.dto.PostsResponseDto;
 import com.springwebservice2.demo.web.dto.PostsSaveRequestDto;

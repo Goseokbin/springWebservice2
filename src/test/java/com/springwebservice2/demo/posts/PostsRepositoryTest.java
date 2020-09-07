@@ -1,7 +1,7 @@
 package com.springwebservice2.demo.posts;
 
-import com.springwebservice2.demo.web.domain.posts.Posts;
-import com.springwebservice2.demo.web.domain.posts.PostsRepository;
+import com.springwebservice2.demo.domain.posts.Posts;
+import com.springwebservice2.demo.domain.posts.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.springwebservice2.demo.web.domain.posts;
+package com.springwebservice2.demo.domain.posts;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

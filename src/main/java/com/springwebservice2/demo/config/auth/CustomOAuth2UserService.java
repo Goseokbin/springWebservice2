@@ -1,9 +1,9 @@
-package com.springwebservice2.demo.config;
+package com.springwebservice2.demo.config.auth;
 
-import com.springwebservice2.demo.config.dto.OAuthAttributes;
-import com.springwebservice2.demo.config.dto.SessionUser;
-import com.springwebservice2.demo.web.domain.user.User;
-import com.springwebservice2.demo.web.domain.user.UserRepository;
+import com.springwebservice2.demo.config.auth.dto.OAuthAttributes;
+import com.springwebservice2.demo.config.auth.dto.SessionUser;
+import com.springwebservice2.demo.domain.user.User;
+import com.springwebservice2.demo.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

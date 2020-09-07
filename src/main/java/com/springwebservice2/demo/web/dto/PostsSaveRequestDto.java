@@ -1,6 +1,6 @@
 package com.springwebservice2.demo.web.dto;
 
-import com.springwebservice2.demo.web.domain.posts.Posts;
+import com.springwebservice2.demo.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

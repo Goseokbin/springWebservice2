@@ -1,6 +1,6 @@
-package com.springwebservice2.demo.config;
+package com.springwebservice2.demo.config.auth;
 
-import com.springwebservice2.demo.web.domain.user.Role;
+import com.springwebservice2.demo.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
