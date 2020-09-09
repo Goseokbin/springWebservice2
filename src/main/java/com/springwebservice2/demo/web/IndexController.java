@@ -22,9 +22,8 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
-        List<PostListResponseDto> posts = postsService.findAllDesc();
-        model.addAttribute("posts",
-                posts);
+
+        model.addAttribute("posts", postsService.findAllDesc());
 
         if(user !=null){
             model.addAttribute("userName", user.getName());
