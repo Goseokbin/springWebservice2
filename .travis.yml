@@ -19,3 +19,22 @@ notifications:
   email:
     recipients:
       - bini1050@naver.com
+
+# deploy 명령어 실행되기 전 CodeDeploy는 Jar 파일 인식 못하므로 Jar,설정 파일을 모아 압축한다.
+before_deploy:
+  - zip -r springWebservice *
+  - mkdir -p deploy
+  - mv springWebservice.zip deploy/springWebservice.zip
+
+# deploy 후 s3로 파일 업로드 local_dir의 파일들을 s3로 전송
+deploy:
+  - provider: :s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+    bucket: springboot-webservice2-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
