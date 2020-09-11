@@ -6,25 +6,20 @@ jdk:
 branches:
   only:
     - master
-#그레이들을 통해 의존성을 받게 되면 이를 해당 디렉토리에 캐시하여, 같은 의존성은 다음 배포 때부터 다시 받지 않도록 설
+#그레이들을 통해 의존성을 받게 되면 이를 해당 디렉토리에 캐시하여, 같은 의존성은 다음 배포 때부터 다시 받지 않도록 설정
 cache:
   directories:
     - '$HOME/./m2/repository'
-    - '$HOME/.gralde'
+    - '$HOME/.gradle'
 
 script: "./gradlew clean build"
 
-# CI 실행 완료 시 메일로 알람
-notifications:
-  email:
-    recipients:
-      - bini1050@naver.com
 
 # deploy 명령어 실행되기 전 CodeDeploy는 Jar 파일 인식 못하므로 Jar,설정 파일을 모아 압축한다.
 before_deploy:
-  - zip -r springWebservice *
+  - zip -r springWebservice2 *
   - mkdir -p deploy
-  - mv springWebservice.zip deploy/springWebservice.zip
+  - mv springWebservice2.zip deploy/springWebservice2.zip
 
 # deploy 후 s3로 파일 업로드 local_dir의 파일들을 s3로 전송
 deploy:
@@ -55,3 +50,8 @@ deploy:
     wait-until-deployed: true
 
 
+# CI 실행 완료 시 메일로 알람
+notifications:
+  email:
+    recipients:
+      - bini1050@naver.com
