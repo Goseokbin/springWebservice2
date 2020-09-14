@@ -1,13 +1,12 @@
-#Travis CI 설정
 language: java
 jdk:
   - openjdk8
 
-#어느 브랜치가 푸시 될 떄 수행할지 지정
 branches:
   only:
     - master
-#그레이들을 통해 의존성을 받게 되면 이를 해당 디렉토리에 캐시하여, 같은 의존성은 다음 배포 때부터 다시 받지 않도록 설정
+
+# Travis CI 서버의 Home
 cache:
   directories:
     - '$HOME/.m2/repository'
@@ -15,41 +14,35 @@ cache:
 
 script: "./gradlew clean build"
 
-
-# deploy 명령어 실행되기 전 CodeDeploy는 Jar 파일 인식 못하므로 Jar,설정 파일을 모아 압축한다.
 before_deploy:
-    - zip -r springWebservice2 *
-    - mkdir -p deploy
-    - mv springWebservice2.zip deploy/springWebservice2.zip
+  - zip -r springWebservice2 *
+  - mkdir -p deploy
+  - mv springWebservice2.zip deploy/springWebservice2.zip
 
-# deploy 후 s3로 파일 업로드 local_dir의 파일들을 s3로 전송
 deploy:
   - provider: s3
-      access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
-      secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-
-    bucket: springboot-webservice2-build
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: springboot-webservice2-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
-    acl: private
-    local_dir: deploy
+    acl: public_read
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
+==
 
   - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-
-    bucket: springboot-webservice2-build
-    key: springboot-webservice2.zip
-
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: springboot-webservice2-build # S3 버킷
+    key: springboot-webservice2.zip # S3 버킷에 저장된 springboot-webservice.zip 파일을 EC2로 배포
     bundle_type: zip
-    application: springboot-webservice2
-    deployment_group: springboot-webservice2-group
+    application: springboot-webservice2 # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: springboot-webservice2-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
 
 
-# CI 실행 완료 시 메일로 알람
 notifications:
   email:
     recipients:
