@@ -31,10 +31,10 @@ deploy:
     wait-until-deployed: true
 
 
-   - provider: codedeploy
+  - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-     bucket: springboot-webservice2-build
+    bucket: springboot-webservice2-build
     key: springboot-webservice2.zip
     bundle_type: zip
     application: springboot-webservice2
