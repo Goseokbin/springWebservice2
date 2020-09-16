@@ -23,24 +23,24 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-    bucket: springboot-webservice2-build # S3 버킷
+    bucket: springboot-webservice2-build
     region: ap-northeast-2
     skip_cleanup: true
-    acl: public_read
-    local_dir: deploy # before_deploy에서 생성한 디렉토리
+    acl: private
+    local_dir: deploy
     wait-until-deployed: true
 
-  - provider: codedeploy
+
+   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-    bucket: springboot-webservice2-build # S3 버킷
-    key: springboot-webservice2.zip # S3 버킷에 저장된 springboot-webservice.zip 파일을 EC2로 배포
+     bucket: springboot-webservice2-build
+    key: springboot-webservice2.zip
     bundle_type: zip
-    application: springboot-webservice2 # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
-    deployment_group: springboot-webservice2-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    application: springboot-webservice2
+    deployment_group: springboot-webservice2-group
     region: ap-northeast-2
     wait-until-deployed: true
-
 
 notifications:
   email:
